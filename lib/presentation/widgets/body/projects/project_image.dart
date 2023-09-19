@@ -15,7 +15,6 @@ class ProjectImage extends StatelessWidget {
       child: CachedNetworkImage(
         imageUrl: imageUrl,
         width: double.infinity,
-
         fit: BoxFit.cover,
         errorWidget: (context, url, error) {
           return Icon(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'dart:html' as html;
 import '../../../../core/utils/app_assets.dart';
 import '../../../../core/utils/app_extensions.dart';
 import '../../../../data/models/responsive_size.dart';
@@ -16,14 +16,15 @@ class IntroImage extends StatelessWidget {
       smallScreenSize: context.width * .26,
     );
 
-    return Positioned(
-      // alignment: Alignment.topRight,
-      top: 0,
-      right: 8,
+    return InkWell(
+      onTap: (){
+        html.window.open("https://www.youtube.com/watch?v=ZD9zhJAfCT4", '_blank');
+      },
       child: Image.asset(
         AppAssets.devImg,
         width: responsiveSize.getSize(),
         height: responsiveSize.getSize(),
+        fit: BoxFit.contain,
       ),
     );
   }

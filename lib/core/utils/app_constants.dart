@@ -64,10 +64,20 @@ abstract class AppConstants {
       googlePlay: 'https://play.google.com/store/apps/details?id=com.asiasolutios.hrm&hl=en&gl=US',
       appleStore: 'https://apps.apple.com/gb/app/asiasolution-xyz/id1668156777',
     ),
+
+    Project(
+        name: "La Spiga D'oro",
+        imageUrl:
+        'assets/images/14.png',
+        description:
+        'While offering our products at low prices. Thanks to our online ordering system, you can easily choose your favorite...',
+        googlePlay: 'https://play.google.com/store/apps/details?id=com.soclose.laspigadoro',
+        appleStore: "https://apps.apple.com/ua/app/la-spiga-doro/id6449036625?platform=iphone"
+    ),
     Project(
       name: 'MR DEAL',
       imageUrl:
-      'assets/images/1.jpeg',
+      'assets/images/2.jpeg',
       description:
       'MR DEAL is on the verge of a breakthrough to create an ecosystem that connects customers looking for mobile screen repair with our approved vendors.',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.mrdealuser.app',
@@ -75,7 +85,7 @@ abstract class AppConstants {
     Project(
       name: 'MR DEAL SELLER',
       imageUrl:
-      'assets/images/project/2.jpeg',
+      'assets/images/project/1.jpeg',
       description:
       'MR DEAL is on the verge of a breakthrough to create an ecosystem that connects customers looking for mobile screen repair with our approved vendors.',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.mrdealvendor.app',
@@ -95,9 +105,10 @@ abstract class AppConstants {
       imageUrl:
       'assets/images/13.png',
       description:
-      'Peacock Supplies is the UK’s leading supplier of all faith-based and multicultural celebration products such as party tableware, decor, greetings and novelty gifts.',
+      'Peacock Supplies is the UK’s leading supplier of all faith-based and multicultural celebration products such as party ...',
       googlePlay: 'https://play.google.com/store/apps/details?id=com.shinee.app&hl=en&gl=US',
     ),
+
 
 
   ];

@@ -26,6 +26,19 @@ class IntoActions extends StatelessWidget {
           ? const SizedBox(height: 6)
           : const SizedBox(width: 32),
       CustomButton(
+        backgroundColor: Colors.red,
+        label:"My Video",
+        icon: Icons.play_circle,
+        borderColor: Colors.red,
+        onPressed: () {
+          html.window.open("https://www.youtube.com/watch?v=ZD9zhJAfCT4", '_blank');
+        },
+        width: 160,
+      ),
+      context.width < DeviceType.ipad.getMaxWidth()
+          ? const SizedBox(height: 6)
+          : const SizedBox(width: 32),
+      CustomButton(
         label: AppBarHeaders.projects.getString(),
         icon: Icons.remove_red_eye,
         borderColor: AppColors.primaryColor,

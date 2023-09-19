@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_email_sender/flutter_email_sender.dart';
+import 'package:mailer/mailer.dart';
+import 'package:mailer/smtp_server.dart';
 import '../../../../core/utils/app_colors.dart';
 import '../../../../core/utils/app_enums.dart';
 import '../../../../core/utils/app_extensions.dart';
@@ -18,7 +20,7 @@ class _ContactFormState extends State<ContactForm> {
   late TextEditingController _emailController;
   late TextEditingController _messageController;
   late TextEditingController _nameController;
-  late TextEditingController _subjectController;
+  late TextEditingController _numberController;
 
   @override
   void initState() {
@@ -27,7 +29,7 @@ class _ContactFormState extends State<ContactForm> {
     _emailController = TextEditingController();
     _messageController = TextEditingController();
     _nameController = TextEditingController();
-    _subjectController = TextEditingController();
+    _numberController = TextEditingController();
   }
 
   @override
@@ -35,7 +37,7 @@ class _ContactFormState extends State<ContactForm> {
     _emailController.dispose();
     _messageController.dispose();
     _nameController.dispose();
-    _subjectController.dispose();
+    _numberController.dispose();
     super.dispose();
   }
 
@@ -61,9 +63,9 @@ class _ContactFormState extends State<ContactForm> {
             ),
             const SizedBox(height: 12),
             TextFormField(
-              controller: _subjectController,
+              controller: _numberController,
               style: AppStyles.s14,
-              decoration: const InputDecoration(labelText: 'Project Name'),
+              decoration: const InputDecoration(labelText: 'Contact number with country Code'),
             ),
             const SizedBox(height: 12),
             TextField(
@@ -77,7 +79,7 @@ class _ContactFormState extends State<ContactForm> {
             const SizedBox(height: 16),
             CustomButton(
               label: 'Submit',
-              onPressed: () {},
+              onPressed: () =>sendEmail(),
               backgroundColor: AppColors.primaryColor,
               width: _getFormWidth(context.width),
             ),
@@ -97,5 +99,47 @@ class _ContactFormState extends State<ContactForm> {
     } else {
       return deviceWidth / 2.5;
     }
+  }
+  Future<void> sendEmail() async {
+    // // Note that using a username and password for gmail only works if
+    // // you have two-factor authentication enabled and created an App password.
+    // // Search for "gmail app password 2fa"
+    // // The alternative is to use oauth.
+    // String username = 'nayon.coders@gmail.com';
+    //
+    // final smtpServer = gmail(username, password);
+    // // Use the SmtpServer class to configure an SMTP server:
+    // // final smtpServer = SmtpServer('smtp.domain.com');
+    // // See the named arguments of SmtpServer for further configuration
+    // // options.
+    //
+    // // Create our message.
+    // final message = Message()
+    //   ..from = Address(username, '$_nameController')
+    //   ..recipients.add('$_emailController')
+    //   ..subject = '$_nameController :: 😀 :: $_numberController :: 😀 :: ${DateTime.now()}'
+    //   ..text = '$_messageController';
+    //
+    //
+    //
+    // // Sending multiple messages with the same connection
+    // //
+    // // Create a smtp client that will persist the connection
+    // var connection = PersistentConnection(smtpServer);
+    //
+    // // Send the first message
+    // await connection.send(message);
+    //
+    //
+    // // close the connection
+    // await connection.close();
+    ScaffoldMessenger.of(context).showSnackBar(
+       SnackBar(
+         backgroundColor: Colors.red,
+        duration: Duration(milliseconds: 5000),
+        content: Text("Please contact with me in Whatsapp. I am always ready reply you..\n Thank You."),
+      ),
+    );
+
   }
 }
